@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="9th.css" />
+
+  </head>
+  <body>
+    <!-- Don't touch the html code -->
+    <div id="main">
+      <h1>CSS Selector 1</h1>
+      <p>Change color of paragraph with id para1 in the container below</p>
+      <p>Don't change color for any other paragraph or heading inside container</p>
+
+      <div id="container">
+        <h2 id="head1">I am a heading 2 with ID head1</h2>
+        <p id="para1">I am Paragraph with ID para1</p>
+        <p>I am paragraph without any ID</p>
+      </div>
+    </div>
+
+    <!-- Don't remove this mocha file -->
+    <div id="mocha"></div>
+    <script type="module" src="./src/setup.js"></script>
+    <script type="module" src="./src/run.js"></script>
+  </body>
+</html>

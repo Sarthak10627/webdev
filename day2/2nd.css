@@ -1,0 +1,13 @@
+.x {
+    height: 80px;
+    width: 120px;
+    margin: 10px;
+    text-align: center;
+    background-color: Aqua;
+    /* Write code here */
+    /* display: inline; */
+    /* display: block; */
+    display: inline-block;
+    /* display: flex; */
+    /* display: contents; */
+  }
