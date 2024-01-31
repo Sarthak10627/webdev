@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Implement Counter</h1>
+    <p>increment button should increase the counter by 1</p>
+    <p>decrement button should decrease the counter by 1</p>
+
+    <div id="container">
+      <h2>Count: <span id="counter">0</span></h2>
+      <div>
+        <button id="increment">Increment</button>
+        <button id="decrement">Decrement</button>
+      </div>
+    </div>
+
+  <!-- Don't remove this mocha file -->
+  <div id="mocha"></div>
+  <script type="module" src="./src/setup.js"></script>
+  <script type="module" src="./src/run.js"></script>
+  <script src="./src/index.js"></script>
+</body>
+
+</html>
