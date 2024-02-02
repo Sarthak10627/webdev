@@ -1,0 +1,16 @@
+#container {
+    position: fixed;
+    z-index: 5;
+    height: 150px;
+    width: 300px;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#special-box {
+    background-color: palegoldenrod;
+    /* Use align-self in such a way that is covers the uncovered skeleton */
+  align-self: end
+}

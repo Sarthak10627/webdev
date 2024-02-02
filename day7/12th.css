@@ -1,0 +1,23 @@
+#container {
+    padding: 1rem;
+    border: 2px solid black;
+    height: 135px;
+    width: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Code from here */
+ color: var(--devsnest-color); 
+    background-color: var(--devsnest-background); 
+
+    /* to here */
+}
+
+:root {
+    --devsnest-color: rgb(255, 255, 255);
+    --devsnest-background: rgb(153, 0, 255);
+}
+
+

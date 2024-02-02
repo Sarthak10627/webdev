@@ -1,0 +1,14 @@
+#container {
+    position: fixed;
+    z-index: 5;
+    height: 150px;
+    width: 300px;
+    border: 2px solid black;
+
+    /* Add appropriate display, align-content and justify-content to match skeleton */
+    /* Code Here */
+  display:flex;
+  flex-wrap : wrap;
+  justify-content: space-evenly ;
+  align-content : space-around;
+}
