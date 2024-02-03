@@ -1,0 +1,19 @@
+#container {
+    /* container styles for reference, don't edit these */
+    position: fixed;
+    z-index: 3;
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border: 1px solid palevioletred;
+}
+
+#box {
+    background-color: palevioletred;
+    /* code from here */
+    grid-column : 4;
+    grid-row : 4;
+    /* to here */
+}
