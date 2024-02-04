@@ -1,0 +1,29 @@
+#container {
+    /* container styles for reference, don't edit these */
+    position: fixed;
+    z-index: 3;
+    height: 250px;
+    width: 250px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    border: 1px solid black;
+    /* Code here */
+    grid-template-areas:
+        "upper upper upper upper"
+        "upper upper upper upper"
+        "lower lower lower lower"
+        "lower lower lower lower";
+}
+
+#darkseagreen-box {
+    background-color: darkseagreen;
+    /* Code here */
+    grid-area: upper; /* Covers the upper half of the grid */
+}
+
+#palevioletred-box {
+    background-color: palevioletred;
+    /* Code here */
+    grid-area: lower; /* Covers the lower half of the grid */
+}

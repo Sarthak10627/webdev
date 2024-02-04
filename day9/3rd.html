@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="3rd.css" />
+  </head>
+
+  <body>
+    <div>
+      <h1>CSS Grid Paint Advance</h1>
+      <p>Use grid-template-area such that</p>
+      <p>div with id <b>darkseagreen-box</b> covers upper/lower half of grid</p>
+      <p>
+        div with id <b>palevioletred-box</b> covers upper/lower half of grid
+      </p>
+      <p><b>Note: both divs shouldn't cover same half</b></p>
+
+      <div id="container">
+        <div id="darkseagreen-box"></div>
+        <div id="palevioletred-box"></div>
+      </div>
+      <div id="skeleton"></div>
+      <script>
+        const skeleton = document.getElementById("skeleton");
+        for (let i = 0; i < 16; i++) {
+          let box = document.createElement("div");
+          box.classList.add("s-boxes");
+          skeleton.appendChild(box);
+        }
+      </script>
+    </div>
+
+    <!-- Don't remove this mocha file -->
+    <div id="mocha"></div>
+    <script type="module" src="./src/setup.js"></script>
+    <script type="module" src="./src/run.js"></script>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
