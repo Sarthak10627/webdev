@@ -1,4 +1,4 @@
-const API_KEY = afca921e7af21c2d06854abdfa9a237;
+const API_KEY = ;
 
 const getCurrentWeatherData = async () => {
   const city = "pune";
@@ -26,25 +26,27 @@ const getHourlyForecast = async ({ name: city }) => {
 
 const formatTemperature = (temp) => `${temp?.toFixed(1)}°`;
 const createIconUrl = (icon) =>
-  `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  ` https://openweathermap.org/img/wn/${icon}@2x.png`;
 
-function loadCurrentForecast({
-  name,
-  main: { temp, temp_max, temp_min },
-  weather: [{ description }],
-}) {
-  const currentForecastElement = document.querySelector("#current-forecast");
-  currentForecastElement.querySelector(".city").textContent = name;
-  currentForecastElement.querySelector(".temp").textContent =
-    formatTemperature(temp);
-  currentForecastElement.querySelector(".description").textContent =
-    description;
-  currentForecastElement.querySelector(
-    ".min-max-temp"
-  ).textContent = `H: ${formatTemperature(temp_max)} L: ${formatTemperature(
-    temp_min
-  )}`;
-}
+  function loadCurrentForecast({ name, main, weather: [{ description }] }) {
+    const currentForecastElement = document.querySelector("#current-forecast");
+    currentForecastElement.querySelector(".city").textContent = name;
+  
+    if (main) {
+      const { temp, temp_max, temp_min } = main; // Destructure temp_max and temp_min here
+      currentForecastElement.querySelector(".temp").textContent =
+        formatTemperature(temp);
+      currentForecastElement.querySelector(
+        ".min-max-temp"
+      ).textContent = `H: ${formatTemperature(
+        temp_max
+      )} L: ${formatTemperature(temp_min)}`;
+    }
+  
+    currentForecastElement.querySelector(".description").textContent =
+      description;
+  }
+  
 
 const loadHourlyForecast = (hourlyForecast) => {
   console.log(hourlyForecast);
@@ -62,27 +64,25 @@ const loadHourlyForecast = (hourlyForecast) => {
   hourlyContainer.innerHTML = innerHTMLString;
 };
 
-const loadFeelsLike = ( {main: { feels_like } } )=>{
-   let container =  document.querySelector("#feels-like");
-   container.querySelector(".feels-like-temp").textContent = formatTemperature(feels_like);
+const loadFeelsLike = ({ main: { feels_like } }) => {
+  let container = document.querySelector("#feels-like");
+  container.querySelector(".feels-like-temp").textContent =
+    formatTemperature(feels_like);
+};
 
-}
-
-const loadHumidity = ( {main: { humidity } } )=>{
-    let container =  document.querySelector("#humidity");
-    container.querySelector(".humidity-value").textContent = `${humidity} %`;
- 
- }
+const loadHumidity = ({ main: { humidity } }) => {
+  let container = document.querySelector("#humidity");
+  container.querySelector(".humidity-value").textContent = `${humidity} %`;
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const currentWeather = await getCurrentWeatherData();
-    loadCurrentForecast(currentWeather);
-  
-    // Correct variable name here
-    const hourlyForecast = await getHourlyForecast(currentWeather);
-    loadHourlyForecast(hourlyForecast);
+  const currentWeather = await getCurrentWeatherData();
+  loadCurrentForecast(currentWeather);
 
-    loadFeelsLike(currentWeather);
-    loadHumidity(currentWeather);
-  });
-  
+  // Correct variable name here
+  const hourlyForecast = await getHourlyForecast(currentWeather);
+  loadHourlyForecast(hourlyForecast);
+
+  loadFeelsLike(currentWeather);
+  loadHumidity(currentWeather);
+});
