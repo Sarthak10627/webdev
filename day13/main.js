@@ -1,4 +1,4 @@
-const API_KEY = "8074f9caa8c044abc96706fd1ea3b7e0";
+const API_KEY = "e74cbc36a88f62c4756b5ff1585ec97e";
 
 const getCurrentWeatherData = async () => {
   const city = "pune";
@@ -26,25 +26,27 @@ const getHourlyForecast = async ({ name: city }) => {
 
 const formatTemperature = (temp) => `${temp?.toFixed(1)}°`;
 const createIconUrl = (icon) =>
-  `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  ` https://openweathermap.org/img/wn/${icon}@2x.png`;
 
-function loadCurrentForecast({
-  name,
-  main: { temp, temp_max, temp_min },
-  weather: [{ description }],
-}) {
-  const currentForecastElement = document.querySelector("#current-forecast");
-  currentForecastElement.querySelector(".city").textContent = name;
-  currentForecastElement.querySelector(".temp").textContent =
-    formatTemperature(temp);
-  currentForecastElement.querySelector(".description").textContent =
-    description;
-  currentForecastElement.querySelector(
-    ".min-max-temp"
-  ).textContent = `H: ${formatTemperature(temp_max)} L: ${formatTemperature(
-    temp_min
-  )}`;
-}
+  function loadCurrentForecast({ name, main, weather: [{ description }] }) {
+    const currentForecastElement = document.querySelector("#current-forecast");
+    currentForecastElement.querySelector(".city").textContent = name;
+  
+    if (main) {
+      const { temp, temp_max, temp_min } = main; // Destructure temp_max and temp_min here
+      currentForecastElement.querySelector(".temp").textContent =
+        formatTemperature(temp);
+      currentForecastElement.querySelector(
+        ".min-max-temp"
+      ).textContent = `H: ${formatTemperature(
+        temp_max
+      )} L: ${formatTemperature(temp_min)}`;
+    }
+  
+    currentForecastElement.querySelector(".description").textContent =
+      description;
+  }
+  
 
 const loadHourlyForecast = (hourlyForecast) => {
   console.log(hourlyForecast);
