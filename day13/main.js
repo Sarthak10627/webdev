@@ -1,4 +1,4 @@
-const API_KEY = "e74cbc36a88f62c4756b5ff1585ec97e";
+const API_KEY = "8074f9caa8c044abc96706fd1ea3b7e0";
 
 const getCurrentWeatherData = async () => {
   const city = "pune";
@@ -62,27 +62,25 @@ const loadHourlyForecast = (hourlyForecast) => {
   hourlyContainer.innerHTML = innerHTMLString;
 };
 
-const loadFeelsLike = ( {main: { feels_like } } )=>{
-   let container =  document.querySelector("#feels-like");
-   container.querySelector(".feels-like-temp").textContent = formatTemperature(feels_like);
+const loadFeelsLike = ({ main: { feels_like } }) => {
+  let container = document.querySelector("#feels-like");
+  container.querySelector(".feels-like-temp").textContent =
+    formatTemperature(feels_like);
+};
 
-}
-
-const loadHumidity = ( {main: { humidity } } )=>{
-    let container =  document.querySelector("#humidity");
-    container.querySelector(".humidity-value").textContent = `${humidity} %`;
- 
- }
+const loadHumidity = ({ main: { humidity } }) => {
+  let container = document.querySelector("#humidity");
+  container.querySelector(".humidity-value").textContent = `${humidity} %`;
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const currentWeather = await getCurrentWeatherData();
-    loadCurrentForecast(currentWeather);
-  
-    // Correct variable name here
-    const hourlyForecast = await getHourlyForecast(currentWeather);
-    loadHourlyForecast(hourlyForecast);
+  const currentWeather = await getCurrentWeatherData();
+  loadCurrentForecast(currentWeather);
 
-    loadFeelsLike(currentWeather);
-    loadHumidity(currentWeather);
-  });
-  
+  // Correct variable name here
+  const hourlyForecast = await getHourlyForecast(currentWeather);
+  loadHourlyForecast(hourlyForecast);
+
+  loadFeelsLike(currentWeather);
+  loadHumidity(currentWeather);
+});
