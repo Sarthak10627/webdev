@@ -1,4 +1,4 @@
-const API_KEY = "e74cbc36a88f62c4756b5ff1585ec97e";
+
 
 const getCurrentWeatherData = async () => {
   const city = "pune";
