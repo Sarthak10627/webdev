@@ -1,0 +1,25 @@
+PS C:\Users\skkau\OneDrive\Desktop\day16> npm run sass-watch
+
+> intro_to_npm@1.0.0 sass-watch
+> node node_modules/.bin/sass --watch styles.scss styles.css
+
+C:\Users\skkau\OneDrive\Desktop\day16\node_modules\.bin\sass:2
+basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+          ^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1290:20)
+    at Module._compile (node:internal/modules/cjs/loader:1342:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1437:10)
+    at Module.load (node:internal/modules/cjs/loader:1212:32)
+    at Module._load (node:internal/modules/cjs/loader:1028:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v21.6.1
+
+PS C:\Users\skkau\OneDrive\Desktop\day16> node node_modules/sass/sass.js --watch styles.scss styles.css
+[2024-02-11 14:05] Compiled styles.scss to styles.css.
+Sass is watching for changes. Press Ctrl-C to stop.
+

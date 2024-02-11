@@ -1,0 +1,45 @@
+// sass is a superset of css
+// it helps writing css with more functionalities
+// and is more readable
+
+//it allows nesting
+article{
+    p{
+        color: royalblue;
+    }
+}
+
+
+//variables
+
+$color : royalblue;
+
+article{
+    p{
+        color: $color;
+    }
+}
+
+
+//inheritance
+%btn{
+    padding: 8px;
+    border-radius: 16px;
+    color: whitesmoke;
+}
+
+.primary,.default{
+    @extend %btn;
+    background-color: lightgray;
+}
+
+
+.primary{
+    @extend %btn;
+    background-color: royalblue;
+}
+
+.success{
+    @extend %btn;
+    background-color: darkgreen;
+}

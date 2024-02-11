@@ -1,0 +1,27 @@
+article p {
+  color: royalblue;
+}
+
+article p {
+  color: royalblue;
+}
+
+.success, .primary, .default {
+  padding: 8px;
+  border-radius: 16px;
+  color: whitesmoke;
+}
+
+.primary, .default {
+  background-color: lightgray;
+}
+
+.primary {
+  background-color: royalblue;
+}
+
+.success {
+  background-color: darkgreen;
+}
+
+/*# sourceMappingURL=styles.css.map */
