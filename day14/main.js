@@ -1,4 +1,4 @@
-const API_KEY = "afca921e7af21c2d06854abdfa9a2376";
+const API_KEY = "";
 
 const DAYS_OF_THE_WEEK = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 
